@@ -7,13 +7,6 @@ const Register = () => {
         email: '',
         username: '',
         password: '',
-        firstname: '',
-        lastname: '',
-        city: '',
-        street: '',
-        number: '',
-        zipcode: '',
-        phone: ''
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -33,21 +26,21 @@ const Register = () => {
                 email: formData.email,
                 username: formData.username,
                 password: formData.password,
-                name: {
-                    firstname: formData.firstname,
-                    lastname: formData.lastname
+                name:{
+                    firstname:'John',
+                    lastname:'Doe'
                 },
-                address: {
-                    city: formData.city,
-                    street: formData.street,
-                    number: formData.number,
-                    zipcode: formData.zipcode,
-                    geolocation: {
-                        lat: '-37.3159',
-                        long: '81.1496'
+                address:{
+                    city:'kilcoole',
+                    street:'7835 new road',
+                    number:3,
+                    zipcode:'12926-3874',
+                    geolocation:{
+                        lat:'-37.3159',
+                        long:'81.1496'
                     }
                 },
-                phone: formData.phone
+                phone:'1-570-236-7033'
             });
             console.log(response.data);
             setSuccess('Registration successful! Redirecting to login...');
@@ -86,62 +79,7 @@ const Register = () => {
                     placeholder="Password" 
                     required 
                 />
-                <input 
-                    type="text" 
-                    name="firstname" 
-                    value={formData.firstname} 
-                    onChange={handleChange} 
-                    placeholder="First Name" 
-                    required 
-                />
-                <input 
-                    type="text" 
-                    name="lastname" 
-                    value={formData.lastname} 
-                    onChange={handleChange} 
-                    placeholder="Last Name" 
-                    required 
-                />
-                <input 
-                    type="text" 
-                    name="city" 
-                    value={formData.city} 
-                    onChange={handleChange} 
-                    placeholder="City" 
-                    required 
-                />
-                <input 
-                    type="text" 
-                    name="street" 
-                    value={formData.street} 
-                    onChange={handleChange} 
-                    placeholder="Street" 
-                    required 
-                />
-                <input 
-                    type="number" 
-                    name="number" 
-                    value={formData.number} 
-                    onChange={handleChange} 
-                    placeholder="Number" 
-                    required 
-                />
-                <input 
-                    type="text" 
-                    name="zipcode" 
-                    value={formData.zipcode} 
-                    onChange={handleChange} 
-                    placeholder="Zipcode" 
-                    required 
-                />
-                <input 
-                    type="text" 
-                    name="phone" 
-                    value={formData.phone} 
-                    onChange={handleChange} 
-                    placeholder="Phone" 
-                    required 
-                />
+                
                 <button type="submit">Register</button>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {success && <p style={{ color: 'green' }}>{success}</p>}
